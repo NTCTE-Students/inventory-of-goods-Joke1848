@@ -34,6 +34,10 @@ class PlatformProvider extends OrchidServiceProvider
     public function menu(): array
     {
         return [
+            Menu::make("Товары")
+                ->icon('bs.cart')
+                ->route('platform.supplies'),
+
             Menu::make('Get Started')
                 ->icon('bs.book')
                 ->title('Navigation')
@@ -89,6 +93,10 @@ class PlatformProvider extends OrchidServiceProvider
                 ->url('https://github.com/orchidsoftware/platform/blob/master/CHANGELOG.md')
                 ->target('_blank')
                 ->badge(fn () => Dashboard::version(), Color::DARK),
+
+            Menu::make('Supplies')
+                ->icon('star')
+                ->route('platform.supplies'),
         ];
     }
 
